@@ -1,0 +1,50 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "endingDifference": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "openingDebit": "1001",
+      "periodCredit": "501"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "endingDifference": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "unposted": "1"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "openingDebit": "1000.01"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "openingDebit": "1000.01",
+      "periodDebit": "500.01"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "endingDifference": "#0.02"
+    },
+    "error": false
+  }
+]
